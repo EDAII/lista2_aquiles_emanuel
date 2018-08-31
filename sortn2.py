@@ -4,7 +4,7 @@ import random
 
 def bubble_sort(v):
     for i in range(len(v)):
-        for j in range(i+1:len(v)):
+        for j in range(i+1 ,len(v)):
             if (v[j] < v[i]):
                 aux = v[i]
                 v[i] = v[j]
@@ -30,8 +30,19 @@ def selection_sort(v):
         (v[i], v[swap]) = (v[swap], v[i])  # troca a ordem dos valores da lista
     return v
 
+
 v = range(21)  # uma lista de 0 a 20
 v = np.array(v)
 random.shuffle(v)
-v_sort = selection_sort(v)
+op = int(input("1 a 3"))
+print(v)
+if (op == 1):
+    v_sort = selection_sort(v)
+elif(op == 2):
+    v_sort = insertion_sort(v)
+elif(op == 3):
+    v_sort = bubble_sort(v)
+
+print(v)
+
 
