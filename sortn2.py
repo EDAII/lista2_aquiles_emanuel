@@ -34,8 +34,9 @@ def selection_sort(v):
 v = range(21)  # uma lista de 0 a 20
 v = np.array(v)
 random.shuffle(v)
-op = int(input("1 a 3"))
 print(v)
+op = int(input("escoha 1 para selection sort, 2 para insertion sort e 3 para bubble sort \n"))
+
 if (op == 1):
     v_sort = selection_sort(v)
 elif(op == 2):
