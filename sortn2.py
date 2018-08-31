@@ -1,31 +1,41 @@
 import numpy as np
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import random
 
+
 def bubble_sort(v):
+    v_ordenado = range(21)
     for i in range(len(v)):
-        for j in range(i+1 ,len(v)):
+        plt.scatter(v_ordenado, v)
+        plt.show()
+        plt.cla()
+        for j in range(i+1, len(v)):
             if (v[j] < v[i]):
                 aux = v[i]
                 v[i] = v[j]
                 v[j] = aux
 
-def insertion_sort( lista ):
-  for i in range( 1, len( lista ) ):
-    chave = lista[i]
-    k = i
-    while k > 0 and chave < lista[k - 1]:
-        lista[k] = lista[k - 1]
-        k -= 1
-    lista[k] = chave
+
+def insertion_sort(v):
+    v_ordenado = range(21)
+    for i in range(1, len(v)):
+        plt.scatter(v_ordenado, v)
+        plt.show()
+        plt.cla()
+        chave = v[i]
+        k = i
+        while k > 0 and chave < v[k - 1]:
+            v[k] = v[k - 1]
+            k -= 1
+        v[k] = chave
 
 
 def selection_sort(v):
-    v_original = v
+    v_ordenado = range(21)
     for i in range(len(v)):
-        #plt.scatter(v_original, v)
-        #plt.show()
-        #plt.cln()
+        plt.scatter(v_ordenado, v)
+        plt.show()
+        plt.cla()
         swap = i + np.argmin(v[i:])
         (v[i], v[swap]) = (v[swap], v[i])  # troca a ordem dos valores da lista
     return v
@@ -45,5 +55,3 @@ elif(op == 3):
     v_sort = bubble_sort(v)
 
 print(v)
-
-
